@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.io.File;
 import java.io.FileReader;
 
+@Slf4j
 @RestController
 @RequestMapping("/")
 public class UserController {
@@ -30,7 +31,9 @@ public class UserController {
   public String addUserToDB() {
 
     String sql = "INSERT INTO students (name) VALUES ('sam');";
-    jdbcTemplate.update(sql);
+    log.info("sql ==>" + sql);
+    int resp = jdbcTemplate.update(sql);
+    log.info("response==>" + resp);
     return "Success";
   }
 
