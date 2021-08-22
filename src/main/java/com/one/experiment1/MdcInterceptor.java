@@ -16,7 +16,7 @@ public class MdcInterceptor implements HandlerInterceptor {
   @Override
   public boolean preHandle(HttpServletRequest request, HttpServletResponse response, Object handler) throws Exception {
     String CID = getCorrelationId();
-    log.info("Generated CID : " + CID + " | Request : " + request.getRequestURI());
+    log.info("Generated CID : " + CID + " | Request start: " + request.getRequestURI());
     MDC.put("CorrelationId", CID);
     return true;
   }
