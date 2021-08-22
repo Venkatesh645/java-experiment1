@@ -13,13 +13,9 @@ public class Experiment1Application {
 
 	public static void main(String[] args) {
 		SpringApplication.run(Experiment1Application.class, args);
-	}
 
-	public void run(String... args) throws Exception{
-		String sql = "INSERT INTO students (name) VALUES ('sam');";
-		int rows = jdbcTemplate.update(sql);
-
-
+//		String sql = "INSERT INTO students (name) VALUES ('sam');";
+//		int rows = jdbcTemplate.update(sql);
 	}
 
 }
